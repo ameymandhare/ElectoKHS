@@ -110,8 +110,8 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3><%= TotalVotedStudents %></h3>
-                  <p>Voted Students Count</p>
+                  <h3><%= TotalHouseVotedStudents %> / <%= TotalSenateVotedStudents %></h3>
+                  <p>Voted House/Senate Students Count</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-home"></i>
@@ -123,13 +123,13 @@
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3><%= TotalUnvotedStudents %></h3>
-                  <p>Unvoted Students Count</p>
+                  <h3><%= TotalHouseUnvotedStudents %> / <%= TotalSenateUnvotedStudents %></h3>
+                  <p>Unvoted House/Senate Students Count</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-briefcase"></i>
                 </div>
-                <a href="SenateNomination.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="VotersStatus.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
             </div>  

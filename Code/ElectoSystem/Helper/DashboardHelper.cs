@@ -123,31 +123,59 @@ namespace ElectoSystem.Helper
         }
 
         ///======================================================================
-        /// Method: GetTotalVotedStudentsCount
+        /// Method: GetTotalHouseVotedStudentsCount
         /// <summary>
-        /// This method will return all students whose voating is still done.
+        /// This method will return all students whose house voating is done.
         /// </summary>
         /// <returns></returns>
         ///======================================================================
-        protected internal int GetTotalVotedStudentsCount()
+        protected internal int GetTotalHouseVotedStudentsCount()
         {
             dashboardEF = new DashboardEntities();
 
-            return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFHouse == true && x.Vst_IVFSenate == true).ToList().Count;
+            return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFHouse == true).ToList().Count;
         }
 
         ///======================================================================
-        /// Method: GetTotalUnvotedStudentsCount
+        /// Method: GetTotalSenateVotedStudentsCount
         /// <summary>
-        /// This method will return all students whose voating is still pending.
+        /// This method will return all students whose Senate voating is done.
         /// </summary>
         /// <returns></returns>
         ///======================================================================
-        protected internal int GetTotalUnvotedStudentsCount()
+        protected internal int GetTotalSenateVotedStudentsCount()
         {
             dashboardEF = new DashboardEntities();
 
-            return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFHouse != true || x.Vst_IVFSenate != true).ToList().Count;
+            return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFSenate == true).ToList().Count;
+        }
+
+        ///======================================================================
+        /// Method: GetTotalHouseUnvotedStudentsCount
+        /// <summary>
+        /// This method will return all students whose house voating is still pending.
+        /// </summary>
+        /// <returns></returns>
+        ///======================================================================
+        protected internal int GetTotalHouseUnvotedStudentsCount()
+        {
+            dashboardEF = new DashboardEntities();
+
+            return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFHouse == false).ToList().Count;
+        }
+
+        ///======================================================================
+        /// Method: GetTotalSenateUnvotedStudentsCount
+        /// <summary>
+        /// This method will return all students whose senate voating is still pending.
+        /// </summary>
+        /// <returns></returns>
+        ///======================================================================
+        protected internal int GetTotalSenateUnvotedStudentsCount()
+        {
+            dashboardEF = new DashboardEntities();
+
+            return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFSenate == false).ToList().Count;
         }
 
         protected internal void GetPrefectList()

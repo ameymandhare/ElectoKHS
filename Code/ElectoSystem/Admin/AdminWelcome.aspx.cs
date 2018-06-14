@@ -17,8 +17,10 @@ namespace ElectoSystem.Admin
         private int lTotalHouseNominees;
         private int lTotalSenateNominees;
         private int lTotalVoters;
-        private int lTotalVotedStudents;
-        private int lTotalUnvotedStudents;
+        private int lTotalHouseVotedStudents;
+        private int lTotalSenateVotedStudents;
+        private int lTotalHouseUnvotedStudents;
+        private int lTotalSenateUnvotedStudents;
         private int lActiveHouseElections;
         private int lActiveSenateElections;
         
@@ -27,50 +29,62 @@ namespace ElectoSystem.Admin
             get { return lTotalHouseElections; }
             set { lTotalHouseElections = value; }
         }
-        
-        public int TotalSenateElections
+
+        protected int TotalSenateElections
         {
             get { return lTotalSenateElections; }
             set { lTotalSenateElections = value; }
         }
 
-        public int TotalHouseNominees
+        protected int TotalHouseNominees
         {
             get { return lTotalHouseNominees; }
             set { lTotalHouseNominees = value; }
         }
 
-        public int TotalSenateNominees
+        protected int TotalSenateNominees
         {
             get { return lTotalSenateNominees; }
             set { lTotalSenateNominees = value; }
         }
 
-        public int TotalVoters
+        protected int TotalVoters
         {
             get { return lTotalVoters; }
             set { lTotalVoters = value; }
         }
 
-        public int TotalVotedStudents
+        protected int TotalHouseVotedStudents
         {
-            get { return lTotalVotedStudents; }
-            set { lTotalVotedStudents = value; }
+            get { return lTotalHouseVotedStudents; }
+            set { lTotalHouseVotedStudents = value; }
         }
 
-        public int TotalUnvotedStudents
+        protected int TotalSenateVotedStudents
         {
-            get { return lTotalUnvotedStudents; }
-            set { lTotalUnvotedStudents = value; }
+            get { return lTotalSenateVotedStudents; }
+            set { lTotalSenateVotedStudents = value; }
         }
 
-        public int ActiveSenateElections
+        protected int TotalHouseUnvotedStudents
+        {
+            get { return lTotalHouseUnvotedStudents; }
+            set { lTotalHouseUnvotedStudents = value; }
+        }
+
+        protected int TotalSenateUnvotedStudents
+        {
+            get { return lTotalSenateUnvotedStudents; }
+            set { lTotalSenateUnvotedStudents = value; }
+        }
+
+        protected int ActiveSenateElections
         {
             get { return lActiveSenateElections; }
             set { lActiveSenateElections = value; }
         }
 
-        public int ActiveHouseElections
+        protected int ActiveHouseElections
         {
             get { return lActiveHouseElections; }
             set { lActiveHouseElections = value; }
@@ -86,8 +100,10 @@ namespace ElectoSystem.Admin
             TotalVoters = dbHelper.GetTotalVotersCount();
             ActiveSenateElections = dbHelper.GetActiveSenateElectionsCount();
             ActiveHouseElections = dbHelper.GetActiveHouseElectionsCount();
-            TotalVotedStudents = dbHelper.GetTotalVotedStudentsCount();
-            TotalUnvotedStudents = dbHelper.GetTotalUnvotedStudentsCount();
+            TotalHouseVotedStudents = dbHelper.GetTotalHouseVotedStudentsCount();
+            TotalSenateVotedStudents = dbHelper.GetTotalSenateVotedStudentsCount();
+            TotalHouseUnvotedStudents = dbHelper.GetTotalHouseUnvotedStudentsCount();
+            TotalSenateUnvotedStudents = dbHelper.GetTotalSenateUnvotedStudentsCount();
         }
     }
 }

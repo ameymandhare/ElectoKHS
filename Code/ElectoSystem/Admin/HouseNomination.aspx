@@ -321,11 +321,11 @@
                 success: function (response) {
                     if(response.d == "1")
                     {
-                        Command: toastr["success"]("Nominee " + item.Nom_Id + " has been added successfully");
+                        Command: toastr["success"]("Nominee has been added successfully");
                     }
                     else if(response.d == "0")
                     {
-                        Command: toastr["error"]("Nominee " + item.Nom_Id + " has not added. Please try later");
+                        Command: toastr["error"]("Nominee has not added. Please try later");
                     }
                     else
                     {
