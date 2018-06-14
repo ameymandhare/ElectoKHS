@@ -20,6 +20,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -117,39 +119,6 @@
     <Content Include="dist\img\bg1.jpg" />
     <Content Include="dist\img\calender.png" />
     <Content Include="dist\img\Electo_Logo-1.png" />
-    <Content Include="dist\img\KL1006.png" />
-    <Content Include="dist\img\KL1015.png" />
-    <Content Include="dist\img\KL1016.png" />
-    <Content Include="dist\img\KL1034.png" />
-    <Content Include="dist\img\KL1040.png" />
-    <Content Include="dist\img\KL1067.png" />
-    <Content Include="dist\img\KL1083.png" />
-    <Content Include="dist\img\KL1090.png" />
-    <Content Include="dist\img\KL1091.png" />
-    <Content Include="dist\img\KL1092.png" />
-    <Content Include="dist\img\KL1113.png" />
-    <Content Include="dist\img\KL1114.png" />
-    <Content Include="dist\img\KL1115.png" />
-    <Content Include="dist\img\KL1131.png" />
-    <Content Include="dist\img\KL1139.png" />
-    <Content Include="dist\img\KL1145.png" />
-    <Content Include="dist\img\KL1146.png" />
-    <Content Include="dist\img\KL1153.png" />
-    <Content Include="dist\img\KL1156.png" />
-    <Content Include="dist\img\KL1163.png" />
-    <Content Include="dist\img\KL1177.png" />
-    <Content Include="dist\img\KL1183.png" />
-    <Content Include="dist\img\KL1184.png" />
-    <Content Include="dist\img\KL1202.png" />
-    <Content Include="dist\img\KL1204.png" />
-    <Content Include="dist\img\KL1205.png" />
-    <Content Include="dist\img\KL1211.png" />
-    <Content Include="dist\img\KL1233.png" />
-    <Content Include="dist\img\KL1244.png" />
-    <Content Include="dist\img\KL1348.png" />
-    <Content Include="dist\img\KL1355.png" />
-    <Content Include="dist\img\KL1376.png" />
-    <Content Include="dist\img\KL1381.png" />
     <Content Include="dist\img\mandatory.ico" />
     <Content Include="dist\img\mandatory.svg" />
     <Content Include="dist\img\mandatory16x16.svg">
@@ -252,59 +221,11 @@
     <Content Include="dist\img\boy.png" />
     <Content Include="dist\img\close.png" />
     <Content Include="dist\img\dT7eM7rac.png" />
-    <Content Include="dist\img\Hd.Boy-Archit Kulkarni%28IX%29.jpg" />
-    <Content Include="dist\img\Hd.Boy-Atharva Pansar%28IX%29.jpg" />
-    <Content Include="dist\img\Hd.Boy-Pranal Pawar%28IX%29.jpg" />
-    <Content Include="dist\img\Hd.Girl-AnupritaKulkarni%28IX%29.jpg" />
-    <Content Include="dist\img\Hd.Girl-ManasiTamgole %28IX%29.jpg" />
-    <Content Include="dist\img\Hd.Girl-SaloniShetye%28IX%29.jpg" />
-    <Content Include="dist\img\Hd.Girl-VaishnaviDesai%28IX%29.jpg" />
     <Content Include="dist\img\icons-2x.png" />
     <Content Include="dist\img\icons.png" />
-    <Content Include="dist\img\Jr.Prf - AGNI - Archita Naik %28V%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - AGNI - Parth Jedhe %28IV%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - AGNI - Rucha Gadgil %28IV%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - AGNI - Vaishnav Pawar %28IV%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - PRITHVI - Astha Bhayani %28V%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - PRITHVI - Sanika Chaudhary %28IV%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - PRITHVI - V. Aniruddha %28V%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - SURYA - Dishita Marathe %28V%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - SURYA - Tejas Nakhate %28V%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - VARUN - Apoorva Landge %28IV%29.jpg" />
-    <Content Include="dist\img\Jr.Prf - VARUN - Apoorva Padwal %28V%29.jpg" />
     <Content Include="dist\img\logo.png" />
-    <Content Include="dist\img\Pref PRITHVI- Durva Ghate %28IX%29.png" />
-    <Content Include="dist\img\Pref SURYA- Swamini Shirsath %28IX%29.png" />
-    <Content Include="dist\img\Pref SURYA- Yashraj Ranawade %28VII%29.png" />
-    <Content Include="dist\img\Pref VARUN- Anusha Bhanap %28VIII%29.png" />
-    <Content Include="dist\img\Pref VARUN- Pratham Kshirsagar %28VII%29.png" />
-    <Content Include="dist\img\Pref VARUN- Sumer Raravikar %28VIII%29.png" />
     <Content Include="dist\img\preload.gif" />
-    <Content Include="dist\img\Prf - AGNI - Harsh Mohite %28VIII%29.jpg" />
-    <Content Include="dist\img\Prf - AGNI - Prutha Chinchore %28VIII%29.jpg" />
-    <Content Include="dist\img\Prf - PRITHVI - Anish Aundhkar %28VIII%29.jpg" />
-    <Content Include="dist\img\Prf - SURYA - Dheeral Bhayani %28VIII%29.jpg" />
-    <Content Include="dist\img\Prf - VARUN - Reva Gadgil %28VII%29.jpg" />
     <Content Include="dist\img\user2-160x160.jpg" />
-    <Content Include="dist\img\Vc. Pref AGNI - Ashish Tiwade %28VII%29.png" />
-    <Content Include="dist\img\Vc. Pref AGNI - Gayatri Walture %28VI%29.png" />
-    <Content Include="dist\img\Vc. Pref PRITHVI - Madhura Kapshikar %28VII%29.png" />
-    <Content Include="dist\img\Vc. Pref PRITHVI- Vishesh Bhandare %28VI%29.png" />
-    <Content Include="dist\img\Vc. Pref SURYA - Apoorv Thite %28VI%29.png" />
-    <Content Include="dist\img\Vc. Pref SURYA - Shweta Mahajan %28VII%29.png" />
-    <Content Include="dist\img\Vc. Pref SURYA- Anurag Bhosale %28VII%29.png" />
-    <Content Include="dist\img\Vc. Pref VARUN - Parth Deshmukh %28VII%29.png" />
-    <Content Include="dist\img\Vc. Pref VARUN - Pranav Raskar %28VI%29.png" />
-    <Content Include="dist\img\Vc.GmsCap - Pratham Harpude %28VIII%29.jpg" />
-    <Content Include="dist\img\Vc.GmsCap - Prithvi Jadhav %28VIII%29.jpg" />
-    <Content Include="dist\img\Vc.GmsCap - Saniya Pendhari %28VIII%29.jpg" />
-    <Content Include="dist\img\Vc.GmsCap - Sneha Shetty %28VIII%29.jpg" />
-    <Content Include="dist\img\Vc.Prf - AGNI - Astha Baviskar %28VI%29.jpg" />
-    <Content Include="dist\img\Vc.Prf - PRITHVI - Sara Powar %28VI%29.jpg" />
-    <Content Include="dist\img\Vc.Prf - PRITHVI - Shruti Kodre %28VI%29.jpg" />
-    <Content Include="dist\img\Vc.Prf - SURYA - Vaibhava Waghmode %28VII%29.jpg" />
-    <Content Include="dist\img\Vc.Prf - VARUN- Anuja Bhadane %28VI%29.jpg" />
-    <Content Include="dist\img\Vc.Prf - VARUN- Diya Shetty %28VI%29.jpg" />
     <Content Include="dist\js\app.js" />
     <Content Include="dist\js\app.min.js" />
     <Content Include="dist\js\canvasjs.min.js" />
