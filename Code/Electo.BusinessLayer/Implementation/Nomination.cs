@@ -5,12 +5,8 @@
 //
 //-----------------------------------------------------------------------------------------
 
-using System;
 using System.Collections.Generic;
 using Electo.DataLayer.Entities;
-using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
-using System.Configuration;
 
 namespace Electo.BusinessLayer.Implementation
 {
