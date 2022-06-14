@@ -1,10 +1,8 @@
-using System;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
 using System.Reflection;
-using MySql.Data.MySqlClient;
 
 namespace Kosus.DataAccess.MySql
 {
