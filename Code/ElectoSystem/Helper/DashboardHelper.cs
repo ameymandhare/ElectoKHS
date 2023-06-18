@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElectoSystem.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,12 @@ namespace ElectoSystem.Helper
     ///======================================================================
     public class DashboardHelper
     {
-        DashboardEntities dashboardEF;
+        ElectoDbEntities dashboardEF;
+
+        public DashboardHelper()
+        {
+            dashboardEF = new ElectoDbEntities();
+        }
 
         ///======================================================================
         /// Method: GetAllHouseElectionsCount
@@ -27,8 +33,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetAllHouseElectionsCount()
         {
-            dashboardEF = new DashboardEntities();
-
             //return dashboardEF.thouseelections.Where(x => x.Hel_StartDate > DateTime.Now && DateTime.Now <= x.Hel_EndDate).ToList().Count;
             return dashboardEF.thouseelections.ToList().Count;
         }
@@ -43,8 +47,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetActiveHouseElectionsCount()
         {
-            dashboardEF = new DashboardEntities();
-
             return dashboardEF.thouseelections.Where(x => x.Hel_StartDate <= DateTime.Now && x.Hel_EndDate >= DateTime.Now).ToList().Count;
             //return dashboardEF.thouseelections.ToList().Count;
         }
@@ -59,8 +61,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetAllSenateElectionsCount()
         {
-            dashboardEF = new DashboardEntities();
-
             //return dashboardEF.tsenateelections.Where(x => x.Sel_StartDate > DateTime.Now && DateTime.Now <= x.Sel_EndDate).ToList().Count;
             return dashboardEF.tsenateelections.ToList().Count;
         }
@@ -75,8 +75,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetActiveSenateElectionsCount()
         {
-            dashboardEF = new DashboardEntities();
-
             return dashboardEF.tsenateelections.Where(x => x.Sel_StartDate > DateTime.Now && DateTime.Now <= x.Sel_EndDate).ToList().Count;
         }
 
@@ -89,8 +87,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetTotalHouseNomineesCount()
         {
-            dashboardEF = new DashboardEntities();
-
             return dashboardEF.thousenominations.Where(x => x.Hsn_IsDeleted != true).ToList().Count;
         }
 
@@ -103,8 +99,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetTotalSenateNomineesCount()
         {
-            dashboardEF = new DashboardEntities();
-
             return dashboardEF.tsenatenominations.Where(x => x.Snn_IsDeleted != true).ToList().Count;
         }
 
@@ -117,8 +111,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetTotalVotersCount()
         {
-            dashboardEF = new DashboardEntities();
-
             return dashboardEF.tvotedstudents.ToList().Count;
         }
 
@@ -131,8 +123,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetTotalHouseVotedStudentsCount()
         {
-            dashboardEF = new DashboardEntities();
-
             return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFHouse == true).ToList().Count;
         }
 
@@ -145,8 +135,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetTotalSenateVotedStudentsCount()
         {
-            dashboardEF = new DashboardEntities();
-
             return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFSenate == true).ToList().Count;
         }
 
@@ -159,8 +147,6 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetTotalHouseUnvotedStudentsCount()
         {
-            dashboardEF = new DashboardEntities();
-
             return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFHouse == false).ToList().Count;
         }
 
@@ -173,16 +159,12 @@ namespace ElectoSystem.Helper
         ///======================================================================
         protected internal int GetTotalSenateUnvotedStudentsCount()
         {
-            dashboardEF = new DashboardEntities();
-
             return dashboardEF.tvotedstudents.Where(x => x.Vst_IVFSenate == false).ToList().Count;
         }
 
         protected internal void GetPrefectList()
         {
             StringBuilder lReturn = new StringBuilder();
-
-            dashboardEF = new DashboardEntities();
 
             var a = (from students in dashboardEF.tstudents
                      join nominees in dashboardEF.thousenominations

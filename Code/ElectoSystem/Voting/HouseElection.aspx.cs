@@ -18,6 +18,7 @@ namespace ElectoSystem.Voting
         List<NomineesEntity> allNomineesList;
         public int studHouseId;
         public static string studId;
+        public static string studClassName;
 
         public List<NomineesEntity> AllNomineesList
         {
@@ -41,7 +42,7 @@ namespace ElectoSystem.Voting
 
         public bool IsVoted
         {
-            get 
+            get
             {
                 UIHelper studentHelper = new UIHelper();
                 //Get status of is student is voted or not.
@@ -101,6 +102,9 @@ namespace ElectoSystem.Voting
                 // Get student Id to check is voted or not.
                 studId = ((StudentEntity)Session["LoggedInUser"]).Stud_Key;
 
+                // Get student Id to check is voted or not.
+                studClassName = ((StudentEntity)Session["LoggedInUser"]).Stud_Class;
+
                 ////Get status of is student is voted or not.
                 //VotetedStatus = studentHelper.GetVotetedStudentsStatusHelp(studId);
 
@@ -118,14 +122,46 @@ namespace ElectoSystem.Voting
             UIHelper studentHelper = new UIHelper();
             string columnName = string.Empty;
 
-            if (studentHelper.UpdateCandidateVoteHelp(studId,xiNominees,"h", columnName))
+            if (studentHelper.UpdateCandidateVoteHelp(studId, xiNominees, "h", columnName))
             {
                 return "1";
             }
             else
             {
                 return "0";
-            }               
+            }
+        }
+
+        //std III, IV & V students will vote for Jr. Vice Prefect & Jr. Prefect 
+        //std VI & VII students will vote for Vice Prefect
+        //std VIII, IX & X will vote for Prefect
+        public static bool CanVote(string houseDesignation, string className)
+        {
+            switch (houseDesignation)
+            {
+                case "JVP":
+                    if (className == "III" || className == "IV" || className == "V")
+                        return true;
+                    else
+                        return false;
+                case "JP":
+                    if (className == "III" || className == "IV" || className == "V")
+                        return true;
+                    else
+                        return false;
+                case "VP":
+                    if (className == "VI" || className == "VII")
+                        return true;
+                    else
+                        return false;
+                case "PR":
+                    if (className == "VIII" || className == "IX" || className == "X")
+                        return true;
+                    else
+                        return false;
+                default:
+                    return false;
+            }
         }
     }
 }

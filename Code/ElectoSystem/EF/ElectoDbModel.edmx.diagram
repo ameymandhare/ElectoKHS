@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="085d13035f704876b86d02d9bcfafe55" Name="Diagram1">
+        <EntityTypeShape EntityType="ElectoDbModel.tacademicyear" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tclass" Width="1.5" PointX="1.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tclasssection" Width="1.5" PointX="3.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tgender" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.thousedesignation" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.thouseelection" Width="1.5" PointX="9" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.thousenomination" Width="1.5" PointX="11.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.thous" Width="1.5" PointX="3.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.trole" Width="1.5" PointX="11.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tsection" Width="1.5" PointX="1.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tsenatedesignation" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tsenateelection" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tsenatenomination" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tstaff" Width="1.5" PointX="14" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tstudent" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tvotedstudent" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tcolumncode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tewsmessage" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.tewsmessageseverity" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElectoDbModel.vlogin" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ElectoDbModel.FK__tClassSec__Csc_C__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tClassSec__Csc_S__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tHouseNom__Hsn_C__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tSenateNo__Snn_C__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tStudent__stud_C__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tHouseDes__Hsd_G__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tSenateDe__Sen_G__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tStudent__stud_G__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tHouseDes__Hsd_H__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tHouseNom__Hsn_H__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK_ElectionId_tHouseNom_Hsn_ElectionId" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tHouseNom__Hsn_H__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tHouseNom__Hsn_s__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tStudent__stud_H__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK_tStaff_tRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tSenateNo__Snn_S__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__ElectionId" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tSenateNo__Snn_s__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="ElectoDbModel.FK__tVotedStu__Vst_S__619B8048" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -7,12 +7,13 @@ using System.Web.UI.WebControls;
 using ElectoSystem.Helper;
 using Electo.Constants;
 using Newtonsoft.Json;
+using ElectoSystem.EF;
 
 namespace ElectoSystem.Admin
 {
     public partial class VotersStatus : System.Web.UI.Page
     {
-        DashboardEntities dbEntities;
+        ElectoDbEntities dbEntities;
         UIHelper studentHelper = new UIHelper();
 
         string lJsonData;
@@ -27,7 +28,7 @@ namespace ElectoSystem.Admin
         {
             try 
             {
-                dbEntities = new DashboardEntities();
+                dbEntities = new ElectoDbEntities();
 
                 var lVotersData = (from students in dbEntities.tstudents
                          join votedStudent in dbEntities.tvotedstudents

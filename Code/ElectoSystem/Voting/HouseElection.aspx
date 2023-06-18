@@ -17,18 +17,25 @@
     </div>
 
     <% foreach (ElectoSystem.Entities.Designation deg in AllDesignation)
-       {
-           var DesignationList = AllNomineesList.Where(x => x.Nom_DesignationCode.ToUpper() == deg.DesignationCode).ToList();
+        {
+            var DesignationList = AllNomineesList.Where(x => x.Nom_DesignationCode.ToUpper() == deg.DesignationCode).ToList();
 
-           if (DesignationList == null || DesignationList.Count <= 0)
-               break;         
+            if (DesignationList == null || DesignationList.Count <= 0)
+                break;
+
+            //std III, IV & V students will vote for Jr. Vice Prefect & Jr. Prefect 
+            //std VI & VII students will vote for Vice Prefect
+            //std VIII, IX & X will vote for Prefect
+            if (!CanVote(deg.DesignationCode, studClassName))
+                continue;
+            
     %>
     <div class="sub-chart-title"><%= deg.DesignationText.ToUpper()%> </div>
     <div class="HeadBoyRow">
         <% 
-          
-           foreach (ElectoSystem.Entities.NomineesEntity nom in DesignationList)
-           { %>
+
+            foreach (ElectoSystem.Entities.NomineesEntity nom in DesignationList)
+            { %>
         <div class="senate-con" witdh="auto">
             <div class="senate-profile">
                 <img src="<%= nom.Nom_PhotoURL.ToString()%>" width="150" />
@@ -52,21 +59,19 @@
         <input id="imgSubmit" type="image" src="../dist/img/SubmitVote.gif" style="margin-left: 42%;" alt="Submit" onclick="return ValidateVoteSelection()" />
     </div>
     <script type="text/javascript">
-        if (<%= IsVoted.ToString().ToLower() %>)
-        {
+        if (<%= IsVoted.ToString().ToLower() %>) {
             $('#imgSubmit').hide();
-        $('.HeadBoyRow').each(function (index) {
-            $(this).find('input[type="radio"]').hide();
-            $(this).find('.lblrdvote').hide();
-        });
+            $('.HeadBoyRow').each(function (index) {
+                $(this).find('input[type="radio"]').hide();
+                $(this).find('.lblrdvote').hide();
+            });
         }
 
         function closeJS() {
             location.reload(true);
         };
 
-        function ValidateVoteSelection(e)
-        {
+        function ValidateVoteSelection(e) {
 
             var isValidate = true;
             var VotedNominees = '';
@@ -77,7 +82,7 @@
                     //alert("checked");
                     VotedNominees = VotedNominees + selectedNominee.val();
                     if (index === total - 1) {
-                        
+
                     }
                     else {
                         VotedNominees = VotedNominees + ','
@@ -90,8 +95,7 @@
             });
             var $NoConflict = jQuery.noConflict();
 
-            if (isValidate)
-            {
+            if (isValidate) {
                 $NoConflict.ajax({
                     type: "POST",
                     url: "HouseElection.aspx/UpdateVotes",
@@ -105,22 +109,19 @@
                     }
                 });
             }
-            else
-            {
+            else {
                 Command: toastr["warning"]("Oops...! You have missed out some of nominee(s) to vote. Please check your votes.");
             }
             return false;
         }
 
         function OnSuccess(response) {
-            
+
             //alert(response.d);
-            if(response.d == "0")
-            {
+            if (response.d == "0") {
                 Command: toastr["error"]("Vote has been failed. Please try again later.");
             }
-            else
-            {
+            else {
                 $('#imgSubmit').hide();
                 Command: toastr["success"]("Thank You. Your vote has been submited successfully.");
             }

@@ -16,7 +16,7 @@ namespace ElectoSystem.Admin
 {
     public partial class StudentMaster : System.Web.UI.Page
     {
-        votinglivedbEntities dbEntityF = new votinglivedbEntities();
+        //votinglivedbEntities dbEntityF = new votinglivedbEntities();
 
         public string JClassSectionData
         {

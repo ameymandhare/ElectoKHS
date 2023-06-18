@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElectoSystem.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,12 @@ namespace ElectoSystem.Common
         /// <summary>
         /// Object of the Entity Framework
         /// </summary>
-        votinglivedbEntities entityFrame;
+        ElectoDbEntities entityFrame;
+
+        public DropDownCommon()
+        {
+            this.entityFrame = new ElectoDbEntities();
+        }
 
         /// <summary>
         /// This fucntion will return Class-Section data for dropdown binding 
@@ -26,7 +32,7 @@ namespace ElectoSystem.Common
                 List<DropDownDataSource> lDropDown = new List<DropDownDataSource>();
                 lDropDown.Add(new DropDownDataSource(0, string.Empty));
 
-                entityFrame = new votinglivedbEntities();
+                entityFrame = new ElectoDbEntities();
 
                 var lCollection = entityFrame.tclasssections.ToList().Where(x => x.Csc_IsDeleted == false || x.Csc_IsDeleted == null).Select(o => new DropDownDataSource { Key = o.Csc_Id, Value = o.Csc_DisplayName }).ToList();
 
@@ -60,8 +66,6 @@ namespace ElectoSystem.Common
                 List<DropDownDataSource> lDropDown = new List<DropDownDataSource>();
                 lDropDown.Add(new DropDownDataSource(0, string.Empty));
 
-                entityFrame = new votinglivedbEntities();
-
                 var lCollection = entityFrame.tclasses.ToList().Where(x => x.Cls_IsDeleted == false || x.Cls_IsDeleted == null).Select(o => new DropDownDataSource { Key = o.Cls_Id, Value = o.Cls_DisplayName }).ToList();
 
                 if (lCollection != null && lCollection.Count > 0)
@@ -93,8 +97,6 @@ namespace ElectoSystem.Common
             {
                 List<DropDownDataSource> lDropDown = new List<DropDownDataSource>();
                 lDropDown.Add(new DropDownDataSource(0, string.Empty));
-
-                entityFrame = new votinglivedbEntities();
 
                 var lCollection = entityFrame.tsections.ToList().Where(x => x.Sec_IsDeleted == false || x.Sec_IsDeleted == null).Select(o => new DropDownDataSource { Key = o.Sec_Id, Value = o.Sec_DisplayName }).ToList();
 
@@ -128,8 +130,6 @@ namespace ElectoSystem.Common
                 List<DropDownDataSource> lDropDown = new List<DropDownDataSource>();
                 lDropDown.Add(new DropDownDataSource(0, string.Empty));
 
-                entityFrame = new votinglivedbEntities();
-
                 var lCollection = entityFrame.thouses.ToList().Where(x => x.Hus_IsDeleted == false || x.Hus_IsDeleted == null).Select(o => new DropDownDataSource { Key = o.Hus_Id, Value = o.Hus_Description }).ToList();
 
                 if (lCollection != null && lCollection.Count > 0)
@@ -162,8 +162,6 @@ namespace ElectoSystem.Common
                 List<DropDownDataSource> lDropDown = new List<DropDownDataSource>();
                 lDropDown.Add(new DropDownDataSource(0, string.Empty));
 
-                entityFrame = new votinglivedbEntities();
-
                 var lCollection = entityFrame.tsenatedesignations.ToList().Where(x => x.Sen_IsDeleted == false || x.Sen_IsDeleted == null).Select(o => new DropDownDataSource { Key = o.Sen_Id, Value = o.Sen_Description }).ToList();
 
                 if (lCollection != null && lCollection.Count > 0)
@@ -195,8 +193,6 @@ namespace ElectoSystem.Common
 
             if (HttpContext.Current.Cache[Common.UIConstants.cache_AllHouseDesignationPair] == null)
             {
-                entityFrame = new votinglivedbEntities();
-
                 var lAllHouseCollection = entityFrame.thousedesignations.ToList().Where(x => x.Hsd_IsDeleted == false || x.Hsd_IsDeleted == null).ToList();
 
                 HttpContext.Current.Cache.Insert(Common.UIConstants.cache_AllHouseDesignationPair, lAllHouseCollection, null, DateTime.Now.AddDays(1), System.Web.Caching.Cache.NoSlidingExpiration);
@@ -224,8 +220,6 @@ namespace ElectoSystem.Common
 
             if (HttpContext.Current.Cache[Common.UIConstants.cache_AllHouseElectionsPair] == null)
             {
-                entityFrame = new votinglivedbEntities();
-
                 var lAllElectionCollection = entityFrame.thouseelections.ToList().ToList();
 
                 if (lAllElectionCollection != null && lAllElectionCollection.Count > 0)
@@ -252,8 +246,6 @@ namespace ElectoSystem.Common
 
             if (HttpContext.Current.Cache[Common.UIConstants.cache_AllSenateElectionsPair] == null)
             {
-                entityFrame = new votinglivedbEntities();
-
                 var lAllElectionCollection = entityFrame.tsenateelections.ToList().ToList();
 
                 if (lAllElectionCollection != null && lAllElectionCollection.Count > 0)

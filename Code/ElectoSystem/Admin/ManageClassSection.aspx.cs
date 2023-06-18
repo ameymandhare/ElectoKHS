@@ -1,4 +1,4 @@
-﻿using Electo.DataLayer.Entities;
+﻿//using Electo.DataLayer.Entities;
 using ElectoSystem.Entities;
 using ElectoSystem.Helper;
 using Newtonsoft.Json;
@@ -10,7 +10,7 @@ namespace ElectoSystem.Admin
 {
     public partial class ManageClassSection : System.Web.UI.Page
     {
-        votinglivedbEntities dbEntityF = new votinglivedbEntities();
+        //votinglivedbEntities dbEntityF = new votinglivedbEntities();
 
         #region Class
         public string JsonClassData
